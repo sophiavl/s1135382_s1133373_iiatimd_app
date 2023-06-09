@@ -16,72 +16,197 @@ class _WorkoutPageState extends State<WorkoutPage> {
   Widget build(BuildContext context) {
     return Container(
       color: background, // Set the background color here
-      child: Center(
-        child: Wrap(
-          spacing: 20.0,
-          runSpacing: 20.0,
-          runAlignment: WrapAlignment.center,
-          children: <Widget>[
-            Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: backgroundContainer,
-                border: Border.all(
-                  color: defaultColor,
-                  width: 2,
-                  style: BorderStyle.solid,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          const SizedBox(height: 20), // Add some spacing at the top
+          // Horizontal section for the elevated button
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () {
+                  // Add your button's onPressed functionality here
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: backgroundContainer,
+                  padding: const EdgeInsets.all(0),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(
+                      color: defaultColor,
+                      width: 2,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                ),
+                child: Container(
+                  width: 100,
+                  height: 25,
+                  child: const Center(
+                    child: Text(
+                      'add workout',
+                      style: TextStyle(color: Colors.white, fontSize: 13),
+                    ),
+                  ),
                 ),
               ),
-              child: const Center(
-                child: Text(
-                  'Push day',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+            ],
+          ),
+
+          const SizedBox(height: 20), // Add some spacing between the sections
+
+          // Container section
+          Center(
+            child: Wrap(
+              spacing: 20.0,
+              runSpacing: 20.0,
+              runAlignment: WrapAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: backgroundContainer,
+                    border: Border.all(
+                      color: defaultColor,
+                      width: 2,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Push day',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: backgroundContainer,
+                    border: Border.all(
+                      color: defaultColor,
+                      width: 2,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Push day',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: backgroundContainer,
+                    border: Border.all(
+                      color: defaultColor,
+                      width: 2,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Push day',
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                  ),
+                ),
+              ],
             ),
-            Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: backgroundContainer,
-                border: Border.all(
-                  color: defaultColor,
-                  width: 2,
-                  style: BorderStyle.solid,
-                ),
-              ),
-              child: const Center(
-                child: Text(
-                  'Push day',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-              ),
-            ),
-            Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: backgroundContainer,
-                border: Border.all(
-                  color: defaultColor,
-                  width: 2,
-                  style: BorderStyle.solid,
-                ),
-              ),
-              child: const Center(
-                child: Text(
-                  'Push day',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Container(
+  //     color: background, // Set the background color here
+  //     child: Column(
+  //       crossAxisAlignment: CrossAxisAlignment.center,
+  //       children: <Widget>[
+  //         ElevatedButton(
+  //           onPressed: () {
+  //             print('hallo');
+  //           },
+  //           style: ElevatedButton.styleFrom(
+  //               shape: RoundedRectangleBorder(
+  //                   borderRadius: BorderRadius.circular(20),
+  //                   side: BorderSide(
+  //                       color: defaultColor,
+  //                       width: 2,
+  //                       style: BorderStyle.solid))),
+  //           child: const Text('Hallo'),
+  //         ),
+  //         Container(
+  //           width: 150,
+  //           height: 150,
+  //           decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(20),
+  //             color: backgroundContainer,
+  //             border: Border.all(
+  //               color: defaultColor,
+  //               width: 2,
+  //               style: BorderStyle.solid,
+  //             ),
+  //           ),
+  //           child: const Center(
+  //             child: Text(
+  //               'Push day',
+  //               style: TextStyle(color: Colors.white, fontSize: 25),
+  //             ),
+  //           ),
+  //         ),
+  //         Container(
+  //           width: 150,
+  //           height: 150,
+  //           decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(20),
+  //             color: backgroundContainer,
+  //             border: Border.all(
+  //               color: defaultColor,
+  //               width: 2,
+  //               style: BorderStyle.solid,
+  //             ),
+  //           ),
+  //           child: const Center(
+  //             child: Text(
+  //               'Push day',
+  //               style: TextStyle(color: Colors.white, fontSize: 25),
+  //             ),
+  //           ),
+  //         ),
+  //         Container(
+  //           width: 150,
+  //           height: 150,
+  //           decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(20),
+  //             color: backgroundContainer,
+  //             border: Border.all(
+  //               color: defaultColor,
+  //               width: 2,
+  //               style: BorderStyle.solid,
+  //             ),
+  //           ),
+  //           child: const Center(
+  //             child: Text(
+  //               'Push day',
+  //               style: TextStyle(color: Colors.white, fontSize: 25),
+  //             ),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 }
