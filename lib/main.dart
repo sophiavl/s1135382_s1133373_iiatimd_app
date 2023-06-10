@@ -41,6 +41,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: createMaterialColor(const Color(0xFF1B1B1B)),
       ),
       home: const RootPage(title: 'My Workout'),
+      routes: {
+        '/workouts': (context) => const WorkoutPage(),
+        '/profile': (context) => const ProfilePage(),
+        '/addworkout': (context) => const AddWorkoutPage(),
+        '/home': (context) => const HomePage()
+      },
     );
   }
 }

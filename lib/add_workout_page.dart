@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:s1135382_s1133373_iiatimd_app/workout_page.dart';
+import 'workout_page.dart';
 
 class AddWorkoutPage extends StatefulWidget {
   const AddWorkoutPage({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _AddWorkoutPageState extends State<AddWorkoutPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushNamed(context, '/workouts');
           },
         ),
       ),
@@ -30,18 +30,7 @@ class _AddWorkoutPageState extends State<AddWorkoutPage> {
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              TextField(
-                onChanged: (value) {
-                  print('Input value: $value');
-                },
-                decoration: const InputDecoration(
-                    labelText: 'Enter text',
-                    border: OutlineInputBorder(),
-                    filled: true,
-                    fillColor: Colors.grey),
-              )
-            ],
+            children: const <Widget>[],
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,

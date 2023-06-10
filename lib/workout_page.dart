@@ -27,11 +27,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
             children: <Widget>[
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (BuildContext context) {
-                      return const AddWorkoutPage();
-                    }),
-                  );
+                  Navigator.pushNamed(context, '/addworkout');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: backgroundContainer,
