@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s1135382_s1133373_iiatimd_app/add_workout_page.dart';
 
 class WorkoutPage extends StatefulWidget {
   const WorkoutPage({Key? key}) : super(key: key);
@@ -26,7 +27,11 @@ class _WorkoutPageState extends State<WorkoutPage> {
             children: <Widget>[
               ElevatedButton(
                 onPressed: () {
-                  // Add your button's onPressed functionality here
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return const AddWorkoutPage();
+                    }),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: backgroundContainer,
@@ -127,86 +132,4 @@ class _WorkoutPageState extends State<WorkoutPage> {
       ),
     );
   }
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     color: background, // Set the background color here
-  //     child: Column(
-  //       crossAxisAlignment: CrossAxisAlignment.center,
-  //       children: <Widget>[
-  //         ElevatedButton(
-  //           onPressed: () {
-  //             print('hallo');
-  //           },
-  //           style: ElevatedButton.styleFrom(
-  //               shape: RoundedRectangleBorder(
-  //                   borderRadius: BorderRadius.circular(20),
-  //                   side: BorderSide(
-  //                       color: defaultColor,
-  //                       width: 2,
-  //                       style: BorderStyle.solid))),
-  //           child: const Text('Hallo'),
-  //         ),
-  //         Container(
-  //           width: 150,
-  //           height: 150,
-  //           decoration: BoxDecoration(
-  //             borderRadius: BorderRadius.circular(20),
-  //             color: backgroundContainer,
-  //             border: Border.all(
-  //               color: defaultColor,
-  //               width: 2,
-  //               style: BorderStyle.solid,
-  //             ),
-  //           ),
-  //           child: const Center(
-  //             child: Text(
-  //               'Push day',
-  //               style: TextStyle(color: Colors.white, fontSize: 25),
-  //             ),
-  //           ),
-  //         ),
-  //         Container(
-  //           width: 150,
-  //           height: 150,
-  //           decoration: BoxDecoration(
-  //             borderRadius: BorderRadius.circular(20),
-  //             color: backgroundContainer,
-  //             border: Border.all(
-  //               color: defaultColor,
-  //               width: 2,
-  //               style: BorderStyle.solid,
-  //             ),
-  //           ),
-  //           child: const Center(
-  //             child: Text(
-  //               'Push day',
-  //               style: TextStyle(color: Colors.white, fontSize: 25),
-  //             ),
-  //           ),
-  //         ),
-  //         Container(
-  //           width: 150,
-  //           height: 150,
-  //           decoration: BoxDecoration(
-  //             borderRadius: BorderRadius.circular(20),
-  //             color: backgroundContainer,
-  //             border: Border.all(
-  //               color: defaultColor,
-  //               width: 2,
-  //               style: BorderStyle.solid,
-  //             ),
-  //           ),
-  //           child: const Center(
-  //             child: Text(
-  //               'Push day',
-  //               style: TextStyle(color: Colors.white, fontSize: 25),
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 }
