@@ -20,7 +20,7 @@ class _AddWorkoutPageState extends State<AddWorkoutPage> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pushNamed(context, '/workouts');
+            Navigator.pop(context);
           },
         ),
       ),
