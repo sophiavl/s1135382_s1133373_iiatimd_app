@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'add_workout_page.dart';
 import 'home_page.dart';
 import 'workout_page.dart';
 import 'profile_page.dart';
@@ -55,12 +56,18 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   int currentPage = 0;
 
-  List<String> pageTitles = ["Today's workout", 'Workouts', 'Profile'];
+  List<String> pageTitles = [
+    "Today's workout",
+    'Workouts',
+    'Profile',
+    'Add a Workout'
+  ];
 
   List<Widget> pages = [
     const HomePage(),
     const WorkoutPage(),
-    const ProfilePage()
+    const ProfilePage(),
+    const AddWorkoutPage()
   ];
 
   @override
