@@ -42,9 +42,9 @@ class MyApp extends StatelessWidget {
       ),
       home: const RootPage(title: 'My Workout'),
       routes: {
-        '/workouts': (context) => const WorkoutPage(),
+        // '/workouts': (context) => const WorkoutPage(),
         '/profile': (context) => const ProfilePage(),
-        '/addworkout': (context) => const AddWorkoutPage(),
+        // '/addworkout': (context) => const AddWorkoutPage(),
         '/home': (context) => const HomePage()
       },
     );
