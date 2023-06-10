@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'workout_page.dart';
+import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('EEEE').format(now);
     return Container(
       color: background, // Set the background color for the whole screen
       child: Center(
@@ -50,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                   }),
                 );
               },
-              child: const Text('Go to Workouts'),
+              child: Text(formattedDate),
             ),
           ],
         ),
