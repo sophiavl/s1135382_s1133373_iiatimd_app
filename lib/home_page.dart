@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'workout_page.dart';
 import 'package:intl/intl.dart';
+import 'package:s1135382_s1133373_iiatimd_app/main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -47,11 +48,12 @@ class _HomePageState extends State<HomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (BuildContext context) {
-                    return const WorkoutPage();
-                  }),
-                );
+                currentPage = 1;
+                //Navigator.of(context).push(
+                //MaterialPageRoute(builder: (BuildContext context) {
+                //return const WorkoutPage();
+                //}),
+                //);
               },
               child: const Text('Go to workouts'),
             ),
