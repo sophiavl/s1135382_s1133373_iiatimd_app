@@ -8,8 +8,15 @@ class PersonalRecord extends StatefulWidget {
 }
 
 class _PersonalRecordState extends State<PersonalRecord> {
+  Color background = const Color(0xFF1B1B1B);
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: background, // Set the background color for the whole screen
+      child: const Center(
+        child: Text('Personal Records'),
+      ),
+    );
   }
 }
