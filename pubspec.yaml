@@ -63,7 +63,8 @@ flutter:
   assets:
     - web\icons\dumbbel.png
     - web\icons\home_icon.png
-    - web\icons\profile_icon.png
+    - web\icons\star_icon.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
