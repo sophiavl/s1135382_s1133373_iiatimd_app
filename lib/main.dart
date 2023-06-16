@@ -63,7 +63,7 @@ class _RootPageState extends State<RootPage> {
   int currentPage = 0;
 
   List<String> pageTitles = [
-    "Today's workout",
+    "Overview",
     'Workouts',
     'Personal Records',
     'Add a Workout'

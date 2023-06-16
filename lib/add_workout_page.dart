@@ -34,7 +34,7 @@ class _AddWorkoutPageState extends State<AddWorkoutPage> {
           },
         ),
       ),
-      body: Column(),
+      body: const Column(),
     );
   }
 }
