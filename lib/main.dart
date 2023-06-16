@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:s1135382_s1133373_iiatimd_app/personal_record_page.dart';
 import 'add_workout_page.dart';
 import 'home_page.dart';
 import 'workout_page.dart';
-import 'profile_page.dart';
 
 MaterialColor createMaterialColor(Color color) {
   List strengths = <double>[.05];
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       home: const RootPage(title: 'My Workout'),
       routes: {
         // '/workouts': (context) => const WorkoutPage(),
-        '/profile': (context) => const ProfilePage(),
+        '/personalrecords': (context) => const PersonalRecord(),
         // '/addworkout': (context) => const AddWorkoutPage(),
         '/home': (context) => const HomePage()
       },
@@ -72,7 +72,7 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = [
     const HomePage(),
     const WorkoutPage(),
-    const ProfilePage(),
+    const PersonalRecord(),
     const AddWorkoutPage()
   ];
 
