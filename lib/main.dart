@@ -114,7 +114,7 @@ class _RootPageState extends State<RootPage> {
               ),
               BottomNavigationBarItem(
                 icon: Image(
-                  image: AssetImage('web/icons/profile_icon.png'),
+                  image: AssetImage('web/icons/star_icon.png'),
                   width: 48,
                   height: 48,
                   color: Colors.black87,
