@@ -15,7 +15,7 @@ class _PersonalRecordState extends State<PersonalRecord> {
     return Container(
       color: background, // Set the background color for the whole screen
       child: const Center(
-        child: Text('Personal Records'),
+        child: Text('Personal Records', style: TextStyle(color: Colors.white)),
       ),
     );
   }
