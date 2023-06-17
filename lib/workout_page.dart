@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:s1135382_s1133373_iiatimd_app/add_workout_page.dart';
+import 'package:s1135382_s1133373_iiatimd_app/abs_page.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/workout_model.dart';
+import 'package:s1135382_s1133373_iiatimd_app/shoulders_page.dart';
 
 class WorkoutPage extends StatefulWidget {
   const WorkoutPage({Key? key}) : super(key: key);
@@ -37,12 +38,13 @@ class _WorkoutPageState extends State<WorkoutPage> {
               const SizedBox(height: 20),
               Center(
                 child: Wrap(
-                  spacing: 20.0,
                   runSpacing: 20.0,
+                  spacing: 20,
                   runAlignment: WrapAlignment.center,
                   children: workouts.map((workout) {
                     return WorkoutModel(
-                      size: 120,
+                      pageName: 'Shoulders',
+                      size: 160,
                       containerName: workout,
                     );
                   }).toList(),
