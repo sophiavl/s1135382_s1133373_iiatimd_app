@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:s1135382_s1133373_iiatimd_app/abs_page.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/workout_model.dart';
+import 'package:s1135382_s1133373_iiatimd_app/shoulders_page.dart';
 
 class WorkoutPage extends StatefulWidget {
   const WorkoutPage({Key? key}) : super(key: key);
@@ -41,6 +43,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   runAlignment: WrapAlignment.center,
                   children: workouts.map((workout) {
                     return WorkoutModel(
+                      pageName: 'Shoulders',
                       size: 160,
                       containerName: workout,
                     );
