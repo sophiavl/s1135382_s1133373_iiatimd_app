@@ -15,23 +15,30 @@ class WorkoutModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: backgroundContainer,
-        border: Border.all(
-          color: defaultColor,
-          width: 2,
-          style: BorderStyle.solid,
+    return ElevatedButton(
+      onPressed: () {
+        // Handle button press event here
+      },
+      style: ElevatedButton.styleFrom(
+        backgroundColor: backgroundContainer,
+        foregroundColor: Colors.white,
+        padding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: BorderSide(
+            color: defaultColor,
+            width: 2,
+            style: BorderStyle.solid,
+          ),
         ),
       ),
-      child: Center(
+      child: Container(
+        width: size,
+        height: size,
+        alignment: Alignment.center,
         child: Text(
           containerName,
           style: const TextStyle(
-            color: Colors.white,
             fontSize: 16,
           ),
         ),
