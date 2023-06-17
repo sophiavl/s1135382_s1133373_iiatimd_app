@@ -5,18 +5,46 @@
     "version": "0.2.0",
     "configurations": [
         {
+
             "name": "s1135382_s1133373_iiatimd_app",
+
+            "name": "IATIMD",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "IATIMD (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "IATIMD (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "s1135382_s1133373_iiatimd_app",
+            "cwd": "s1135382_s1133373_iiatimd_app",
+
             "request": "launch",
             "type": "dart"
         },
         {
             "name": "s1135382_s1133373_iiatimd_app (profile mode)",
+
+            "cwd": "s1135382_s1133373_iiatimd_app",
+
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
             "name": "s1135382_s1133373_iiatimd_app (release mode)",
+
+            "cwd": "s1135382_s1133373_iiatimd_app",
+
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

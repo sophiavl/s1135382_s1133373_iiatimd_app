@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
               height: MediaQuery.of(context).size.height * 0.2,
               alignment: Alignment.center,
               decoration: const BoxDecoration(
-                color: Colors.blue,
+                color: Color(0xFF9F51BA),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
                   topRight: Radius.circular(10),
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                   bottomRight: Radius.circular(15),
                 ),
               ),
-              child: const Text('Hello'),
+              child: Text("It's $formattedDate"),
             ),
             ElevatedButton(
               onPressed: () {
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                   }),
                 );
               },
-              child: Text(formattedDate),
+              child: const Text('Go to workouts'),
             ),
           ],
         ),
