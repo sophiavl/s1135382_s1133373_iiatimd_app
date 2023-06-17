@@ -15,26 +15,24 @@ class WorkoutModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: backgroundContainer,
-          border: Border.all(
-            color: defaultColor,
-            width: 2,
-            style: BorderStyle.solid,
-          ),
+    return Container(
+      width: size,
+      height: size,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: backgroundContainer,
+        border: Border.all(
+          color: defaultColor,
+          width: 2,
+          style: BorderStyle.solid,
         ),
-        child: Center(
-          child: Text(
-            containerName,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
+      ),
+      child: Center(
+        child: Text(
+          containerName,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
           ),
         ),
       ),

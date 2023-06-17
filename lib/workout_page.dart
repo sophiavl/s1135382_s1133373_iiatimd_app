@@ -36,12 +36,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
               const SizedBox(height: 20),
               Center(
                 child: Wrap(
-                  spacing: 20.0,
                   runSpacing: 20.0,
+                  spacing: 20,
                   runAlignment: WrapAlignment.center,
                   children: workouts.map((workout) {
                     return WorkoutModel(
-                      size: 120,
+                      size: 160,
                       containerName: workout,
                     );
                   }).toList(),
