@@ -31,32 +31,61 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.7,
-              height: MediaQuery.of(context).size.height * 0.1,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                color: Color(0xFF9F51BA),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(5),
-                  bottomRight: Radius.circular(15),
+            Stack(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('web/images/gym.png'),
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
                 ),
-              ),
-              child: Text(formattedDate == 'Monday'
-                  ? "It's $formattedDate, time to push!"
-                  : formattedDate == 'Tuesday'
-                      ? "It's $formattedDate, time to pull!"
-                      : formattedDate == 'Wednesday'
-                          ? "It's $formattedDate, time to train legs!"
-                          : formattedDate == 'Thursday'
-                              ? "It's $formattedDate, time to push AND pull!"
-                              : formattedDate == 'Friday'
-                                  ? "It's $formattedDate, time to train arms!"
-                                  : formattedDate == 'Saturday'
-                                      ? "It's $formattedDate, time to do legs again!"
-                                      : "It's $formattedDate, take a rest today"),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.1,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF9F51BA).withOpacity(0.7),
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    formattedDate == 'Monday'
+                        ? "It's $formattedDate, time to push!"
+                        : formattedDate == 'Tuesday'
+                            ? "It's $formattedDate, time to pull!"
+                            : formattedDate == 'Wednesday'
+                                ? "It's $formattedDate, time to train legs!"
+                                : formattedDate == 'Thursday'
+                                    ? "It's $formattedDate, time to push AND pull!"
+                                    : formattedDate == 'Friday'
+                                        ? "It's $formattedDate, time to train arms!"
+                                        : formattedDate == 'Saturday'
+                                            ? "It's $formattedDate, time to do legs again!"
+                                            : "It's $formattedDate, take a rest today",
+                    style: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.4,
