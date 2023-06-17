@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:s1135382_s1133373_iiatimd_app/add_workout_page.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/workout_model.dart';
 
 class WorkoutPage extends StatefulWidget {
