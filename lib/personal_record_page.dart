@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/pr_model.dart';
 
-class PersonalRecord extends StatefulWidget {
-  const PersonalRecord({super.key});
+class PersonalRecordPage extends StatefulWidget {
+  const PersonalRecordPage({super.key});
 
   @override
-  State<PersonalRecord> createState() => _PersonalRecordState();
+  State<PersonalRecordPage> createState() => _PersonalRecordPageState();
 }
 
-class _PersonalRecordState extends State<PersonalRecord> {
+class _PersonalRecordPageState extends State<PersonalRecordPage> {
   Color background = const Color(0xFF1B1B1B);
 
   @override
