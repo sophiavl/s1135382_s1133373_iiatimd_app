@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s1135382_s1133373_iiatimd_app/components/navbar.dart';
 
 class Shoulders extends StatefulWidget {
   const Shoulders({super.key});
@@ -15,9 +16,11 @@ class _ShouldersState extends State<Shoulders> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: background,
-        body: const SingleChildScrollView(
-          child: Text('Shoulders'),
-        ));
+      backgroundColor: background,
+      body: const SingleChildScrollView(
+        child: Text('Shoulders'),
+      ),
+      bottomNavigationBar: const NavBar(),
+    );
   }
 }
