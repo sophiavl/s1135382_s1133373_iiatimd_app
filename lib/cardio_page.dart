@@ -15,9 +15,54 @@ class _CardioState extends State<Cardio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: background,
-        body: const SingleChildScrollView(
-          child: Text('Cardio'),
-        ));
+      appBar: AppBar(
+        title: const Text('cardio'),
+        centerTitle: true,
+      ),
+      backgroundColor: background,
+      body: const SingleChildScrollView(
+        child: Text('Cardio'),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 1, // Set the selected index for the current page
+        onTap: (index) {
+          // Handle navigation here
+          if (index == 0) {
+            Navigator.pushNamed(context, '/home');
+          } else if (index == 2) {
+            Navigator.pushNamed(context, '/personalrecords');
+          }
+        },
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('web/icons/home_icon.png'),
+              width: 48,
+              height: 48,
+              color: Colors.black87,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('web/icons/dumbbel.png'),
+              width: 48,
+              height: 48,
+              color: Colors.black87,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Image(
+              image: AssetImage('web/icons/star_icon.png'),
+              width: 48,
+              height: 48,
+              color: Colors.black87,
+            ),
+            label: '',
+          ),
+        ],
+      ),
+    );
   }
 }
