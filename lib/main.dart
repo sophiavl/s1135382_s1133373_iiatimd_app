@@ -30,7 +30,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,11 +39,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: createMaterialColor(const Color(0xFF1B1B1B)),
       ),
       home: const RootPage(title: 'My Workout'),
-      routes: {
-        // '/workouts': (context) => const WorkoutPage(),
-        '/personalrecords': (context) => const PersonalRecordPage(),
-        '/home': (context) => const HomePage()
-      },
+      // routes: {
+      //   // '/workouts': (context) => const WorkoutPage(),
+      //   '/personalrecords': (context) => const PersonalRecordPage(),
+      //   '/home': (context) => const HomePage()
+      // },
     );
   }
 }
