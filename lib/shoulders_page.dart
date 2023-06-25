@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/navbar.dart';
+import 'package:s1135382_s1133373_iiatimd_app/components/workout_sort.dart';
 
 class Shoulders extends StatefulWidget {
   const Shoulders({Key? key}) : super(key: key);
@@ -13,6 +14,16 @@ class _ShouldersState extends State<Shoulders> {
   Color defaultColor = const Color(0xFF9F51BA);
   Color background = const Color(0xFF1B1B1B);
 
+  List<String> workouts = [
+    'Cable Overhead Press',
+    'Barbell Overhead Press',
+    'Barbell Front Raise',
+    'Barbell Upright Row',
+    'Barbell Z Press',
+    'Cable Rear Delt Fly',
+    'Cable Upright Row'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +32,16 @@ class _ShouldersState extends State<Shoulders> {
         centerTitle: true,
       ),
       backgroundColor: background,
-      body: const SingleChildScrollView(
-        child: Text('Shoulders'),
-      ),
+      body: SingleChildScrollView(
+          child: Column(children: <Widget>[
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: workouts.length,
+          itemBuilder: (BuildContext context, int index) {
+            return WorkoutSort(workoutName: workouts[index]);
+          },
+        )
+      ])),
     );
   }
 }

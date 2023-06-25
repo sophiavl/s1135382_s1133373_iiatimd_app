@@ -14,6 +14,17 @@ class _AbsState extends State<Abs> {
   Color background = const Color(0xFF1B1B1B);
   Color text = const Color(0xFFFDFDFD);
 
+  List<String> workouts = [
+    'Crunches',
+    'Laying Leg Raises',
+    'Plank',
+    'Hanging Knee Raises',
+    'Russian Twist',
+    'Hand Plank',
+    'Mountain Climber',
+    'Burpee'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,13 +34,15 @@ class _AbsState extends State<Abs> {
       ),
       backgroundColor: background,
       body: SingleChildScrollView(
-        child: Column(
-          children: const [
-            WorkoutSort(workoutName: 'Plank'),
-            WorkoutSort(workoutName: 'Crunches')
-          ],
-        ),
-      ),
+          child: Column(children: <Widget>[
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: workouts.length,
+          itemBuilder: (BuildContext context, int index) {
+            return WorkoutSort(workoutName: workouts[index]);
+          },
+        )
+      ])),
     );
   }
 }
