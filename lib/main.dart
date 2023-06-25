@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:s1135382_s1133373_iiatimd_app/personal_record_page.dart';
 import 'home_page.dart';
 import 'workout_page.dart';
+import 'personal_record_page.dart';
 
 MaterialColor createMaterialColor(Color color) {
   List strengths = <double>[.05];
@@ -30,7 +30,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,11 +39,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: createMaterialColor(const Color(0xFF1B1B1B)),
       ),
       home: const RootPage(title: 'My Workout'),
-      routes: {
-        // '/workouts': (context) => const WorkoutPage(),
-        '/personalrecords': (context) => const PersonalRecord(),
-        '/home': (context) => const HomePage()
-      },
+      // routes: {
+      //   // '/workouts': (context) => const WorkoutPage(),
+      //   '/personalrecords': (context) => const PersonalRecordPage(),
+      //   '/home': (context) => const HomePage()
+      // },
     );
   }
 }
@@ -69,7 +68,7 @@ class _RootPageState extends State<RootPage> {
   List<Widget> pages = [
     const HomePage(),
     const WorkoutPage(),
-    const PersonalRecord(),
+    const PersonalRecordPage(),
   ];
 
   @override

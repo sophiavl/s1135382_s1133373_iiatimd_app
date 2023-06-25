@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('EEEE').format(now);
     return Container(
-      color: background, // Set the background color for the whole screen
+      color: background,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -100,11 +100,12 @@ class _HomePageState extends State<HomePage> {
                   return const Color.fromARGB(255, 32, 32, 32);
                 })),
                 onPressed: () {
-                  //Navigator.of(context).push(
-                  //MaterialPageRoute(builder: (BuildContext context) {
-                  //return const WorkoutPage();
-                  //}),
-                  //);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WorkoutPage(),
+                    ),
+                  );
                 },
                 child: const Text('Go to workouts'),
               ),

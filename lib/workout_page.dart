@@ -42,10 +42,12 @@ class _WorkoutPageState extends State<WorkoutPage> {
                   spacing: 20,
                   runAlignment: WrapAlignment.center,
                   children: workouts.map((workout) {
-                    return WorkoutModel(
-                      pageName: 'Shoulders',
-                      size: 160,
-                      containerName: workout,
+                    return GestureDetector(
+                      child: WorkoutModel(
+                        pageName: workout,
+                        size: 160,
+                        containerName: workout,
+                      ),
                     );
                   }).toList(),
                 ),
