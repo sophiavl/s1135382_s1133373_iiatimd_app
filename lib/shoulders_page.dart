@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/navbar.dart';
+import 'package:s1135382_s1133373_iiatimd_app/components/workout_sort.dart';
 
 class Shoulders extends StatefulWidget {
   const Shoulders({Key? key}) : super(key: key);
@@ -13,6 +14,16 @@ class _ShouldersState extends State<Shoulders> {
   Color defaultColor = const Color(0xFF9F51BA);
   Color background = const Color(0xFF1B1B1B);
 
+  List<String> workouts = [
+    'Cable Overhead Press',
+    'Barbell Overhead Press',
+    'Barbell Front Raise',
+    'Barbell Upright Row',
+    'Barbell Z Press',
+    'Cable Rear Delt Fly',
+    'Cable Upright Row'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,49 +32,16 @@ class _ShouldersState extends State<Shoulders> {
         centerTitle: true,
       ),
       backgroundColor: background,
-      body: const SingleChildScrollView(
-        child: Text('Shoulders'),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 1, // Set the selected index for the current page
-        onTap: (index) {
-          // Handle navigation here
-          if (index == 0) {
-            Navigator.pushNamed(context, '/home');
-          } else if (index == 2) {
-            Navigator.pushNamed(context, '/personalrecords');
-          }
-        },
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Image(
-              image: AssetImage('web/icons/home_icon.png'),
-              width: 48,
-              height: 48,
-              color: Colors.black87,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Image(
-              image: AssetImage('web/icons/dumbbel.png'),
-              width: 48,
-              height: 48,
-              color: Colors.black87,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Image(
-              image: AssetImage('web/icons/star_icon.png'),
-              width: 48,
-              height: 48,
-              color: Colors.black87,
-            ),
-            label: '',
-          ),
-        ],
-      ),
+      body: SingleChildScrollView(
+          child: Column(children: <Widget>[
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: workouts.length,
+          itemBuilder: (BuildContext context, int index) {
+            return WorkoutSort(workoutName: workouts[index]);
+          },
+        )
+      ])),
     );
   }
 }
