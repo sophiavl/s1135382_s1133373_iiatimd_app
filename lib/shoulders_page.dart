@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:s1135382_s1133373_iiatimd_app/components/navbar.dart';
 import 'package:s1135382_s1133373_iiatimd_app/components/workout_sort.dart';
 
 class Shoulders extends StatefulWidget {

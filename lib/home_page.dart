@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'workout_page.dart';
 import 'package:intl/intl.dart';
-import 'package:s1135382_s1133373_iiatimd_app/main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

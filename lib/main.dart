@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'workout_page.dart';
 import 'personal_record_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 MaterialColor createMaterialColor(Color color) {
   List strengths = <double>[.05];
