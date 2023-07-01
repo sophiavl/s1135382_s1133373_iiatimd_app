@@ -1,7 +1,8 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'workout_page.dart';
 import 'package:intl/intl.dart';
-import 'package:s1135382_s1133373_iiatimd_app/main.dart';
+import 'package:pedometer/pedometer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -12,6 +13,52 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Color background = const Color(0xFF1B1B1B);
+
+  late Stream<StepCount> _stepCountStream;
+  late Stream<PedestrianStatus> _pedestrianStatusStream;
+  String _status = '?', _steps = '?';
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  void onStepCount(StepCount event) {
+    setState(() {
+      _steps = event.steps.toString();
+    });
+  }
+
+  void onPedestrianStatusChanged(PedestrianStatus event) {
+    setState(() {
+      _status = event.status;
+    });
+  }
+
+  void onPedestrianStatusError(error) {
+    setState(() {
+      _status = 'Pedestrian Status not available';
+    });
+  }
+
+  void onStepCountError(error) {
+    setState(() {
+      _steps = 'Step Count not available';
+    });
+  }
+
+  void initPlatformState() {
+    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
+    _pedestrianStatusStream
+        .listen(onPedestrianStatusChanged)
+        .onError(onPedestrianStatusError);
+
+    _stepCountStream = Pedometer.stepCountStream;
+    _stepCountStream.listen(onStepCount).onError(onStepCountError);
+
+    if (!mounted) return;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +133,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
+            ),
+            Text('steps taken $_steps'),
+            Text(
+              'Status: $_status',
+              style: _status == 'walking' || _status == 'stopped'
+                  ? const TextStyle(fontSize: 30)
+                  : const TextStyle(fontSize: 20, color: Colors.red),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.4,

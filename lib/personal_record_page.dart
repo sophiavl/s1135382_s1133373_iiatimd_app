@@ -18,16 +18,16 @@ class _PersonalRecordPageState extends State<PersonalRecordPage> {
       body: SingleChildScrollView(
         child: Container(
           color: background,
-          child: Column(
+          child: const Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Center(
                 child: Wrap(
                     spacing: 20.0,
                     runSpacing: 20.0,
                     runAlignment: WrapAlignment.center,
-                    children: const [
+                    children: [
                       PrModel(workoutName: 'Bench Press', pr: 43.5),
                       PrModel(workoutName: 'Squats', pr: 75),
                       PrModel(workoutName: 'Romanian Deadlift', pr: 50),
