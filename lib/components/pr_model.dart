@@ -1,16 +1,31 @@
 import 'package:flutter/material.dart';
 
-class PrModel extends StatelessWidget {
-  final String workoutName;
-  final double pr;
-  final Color borderColor = const Color(0xFFBBBBBB);
-  final Color defaultColor = const Color(0xFF9F51BA);
+class PrModel {
+  PrModel({
+    required this.workoutName,
+    required this.pr,
+  });
 
-  const PrModel({Key? key, required this.workoutName, required this.pr})
-      : super(key: key);
+  String workoutName;
+  int pr;
+}
+
+class PrWidget extends StatelessWidget {
+  const PrWidget({
+    Key? key,
+    required this.prModel,
+    required this.onPrChanged,
+  }) : super(key: key);
+
+  final PrModel prModel;
+  final Color defaultColor = const Color(0xFF9F51BA);
+  final ValueChanged<int> onPrChanged;
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController textController =
+        TextEditingController(text: prModel.pr.toString());
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
@@ -24,7 +39,7 @@ class PrModel extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  workoutName,
+                  prModel.workoutName,
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -37,14 +52,21 @@ class PrModel extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     border: Border.all(color: defaultColor),
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5.0),
+                  child: Padding(
+                    padding: const EdgeInsets.all(1),
                     child: TextField(
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white),
-                      decoration: InputDecoration(
+                      style: const TextStyle(color: Colors.white),
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                       ),
+                      keyboardType: TextInputType.number,
+                      controller: textController,
+                      onChanged: (value) {
+                        final reversedValue = value.split('').reversed.join();
+                        final prValue = int.tryParse(reversedValue) ?? 0;
+                        onPrChanged(prValue);
+                      },
                     ),
                   ),
                 ),
@@ -52,7 +74,7 @@ class PrModel extends StatelessWidget {
             ),
           ),
           Divider(
-            color: borderColor,
+            color: defaultColor,
             thickness: 1.0,
             height: 1.0,
           ),
