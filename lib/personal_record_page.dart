@@ -36,10 +36,10 @@ class _PersonalRecordPageState extends State<PersonalRecordPage> {
       body: SingleChildScrollView(
         child: Container(
           color: background,
-          child: const Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Center(
                 child: Column(
                   children: prDataList.map((data) {
