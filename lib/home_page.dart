@@ -15,8 +15,7 @@ class _HomePageState extends State<HomePage> {
   Color background = const Color(0xFF1B1B1B);
 
   late Stream<StepCount> _stepCountStream;
-  late Stream<PedestrianStatus> _pedestrianStatusStream;
-  String _status = '?', _steps = '?';
+  String _steps = '?';
 
   @override
   void initState() {
@@ -30,18 +29,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void onPedestrianStatusChanged(PedestrianStatus event) {
-    setState(() {
-      _status = event.status;
-    });
-  }
-
-  void onPedestrianStatusError(error) {
-    setState(() {
-      _status = 'Pedestrian Status not available';
-    });
-  }
-
   void onStepCountError(error) {
     setState(() {
       _steps = 'Step Count not available';
@@ -49,11 +36,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void initPlatformState() {
-    _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-    _pedestrianStatusStream
-        .listen(onPedestrianStatusChanged)
-        .onError(onPedestrianStatusError);
-
     _stepCountStream = Pedometer.stepCountStream;
     _stepCountStream.listen(onStepCount).onError(onStepCountError);
 
@@ -134,12 +116,30 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            Text('steps taken $_steps'),
-            Text(
-              'Status: $_status',
-              style: _status == 'walking' || _status == 'stopped'
-                  ? const TextStyle(fontSize: 30)
-                  : const TextStyle(fontSize: 20, color: Colors.red),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFF9F51BA),
+                  ),
+                ),
+                Container(
+                  width: 130,
+                  height: 130,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xFF1B1B1B),
+                  ),
+                ),
+                Text(
+                  'steps taken: $_steps',
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ],
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.4,
