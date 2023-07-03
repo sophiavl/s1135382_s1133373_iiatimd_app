@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'add_workout_page.dart';
 import 'home_page.dart';
 import 'workout_page.dart';
-import 'profile_page.dart';
+import 'personal_record_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 MaterialColor createMaterialColor(Color color) {
   List strengths = <double>[.05];
@@ -31,7 +31,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,6 +40,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: createMaterialColor(const Color(0xFF1B1B1B)),
       ),
       home: const RootPage(title: 'My Workout'),
+      // routes: {
+      //   // '/workouts': (context) => const WorkoutPage(),
+      //   '/personalrecords': (context) => const PersonalRecordPage(),
+      //   '/home': (context) => const HomePage()
+      // },
     );
   }
 }
@@ -57,17 +61,15 @@ class _RootPageState extends State<RootPage> {
   int currentPage = 0;
 
   List<String> pageTitles = [
-    "Today's workout",
+    "Home",
     'Workouts',
-    'Profile',
-    'Add a Workout'
+    'Personal Records',
   ];
 
   List<Widget> pages = [
     const HomePage(),
     const WorkoutPage(),
-    const ProfilePage(),
-    const AddWorkoutPage()
+    const PersonalRecordPage(),
   ];
 
   @override
@@ -108,7 +110,7 @@ class _RootPageState extends State<RootPage> {
               ),
               BottomNavigationBarItem(
                 icon: Image(
-                  image: AssetImage('web/icons/profile_icon.png'),
+                  image: AssetImage('web/icons/star_icon.png'),
                   width: 48,
                   height: 48,
                   color: Colors.black87,
